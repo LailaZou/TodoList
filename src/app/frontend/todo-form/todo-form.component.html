@@ -1,0 +1,19 @@
+<div class="col-md-8">
+    <div *ngIf='todo'>
+        <form class="form" [formGroup]="todoForm" novalidate (ngSubmit)='onSubmit()'>
+            
+          <h2 class="form-signin-heading">Todo</h2>
+          <br>
+          <label for="action" class="sr-only">Action</label>
+          <input type="text" id="action" class="form-control" placeholder="Action" autofocus formControlName="action">
+    <br>
+          <label for="dueDate" class="sr-only">dueDate</label>
+          <input type="text" id="dueDate" class="form-control" placeholder="dueDate" formControlName="dueDate" >
+          <br>
+          <button class="btn btn-lg btn-primary btn-block" type="submit" [disabled]='todoForm.status==="INVALID"'>Save</button>  
+    
+    
+        
+      </form>
+    </div>
+</div>
